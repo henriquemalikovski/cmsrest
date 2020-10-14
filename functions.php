@@ -1,14 +1,14 @@
 <?php
 
-function get_campo($key, $page_id = 0)
+function get_field($key, $page_id = 0)
 {
   $id = $page_id !== 0 ? $page_id : get_the_ID();
   return get_post_meta($id, $key, true);
 }
 
-function the_echo_campo($key, $page_id = 0)
+function the_field($key, $page_id = 0)
 {
-  echo get_campo($page_id, $key);
+  echo get_field($page_id, $key);
 }
 
 
@@ -25,6 +25,20 @@ function cmb2_fields_menu()
       'value' => 'page-home.php'
     ],
   ]);
+
+  $categoria = $cmb->add_field([
+    'name' => 'Categoria',
+    'id' => 'categoria',
+    'type' => 'group',
+    'repeatable' => true,
+    'options' => [
+      'group_title' => 'Categoria {#}',
+      'add_button' => 'Adicionar Categoria',
+      'remove_button' => 'Remover Categoria',
+      'sortable' => true,
+    ],
+  ]);
+
 
   $pratos = $cmb->add_field([
     'name' => 'Pratos',

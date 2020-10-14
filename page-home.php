@@ -10,7 +10,7 @@
       <div class="menu-item grid-8">
         <h2>Peixes</h2>
         <ul>
-          <?php $pratos = get_campo('pratos');
+          <?php $pratos = get_field('pratos');
           if (isset($pratos)) {
             foreach ($pratos as $prato) { ?>
               <li>
