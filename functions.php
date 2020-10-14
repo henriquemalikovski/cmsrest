@@ -26,20 +26,6 @@ function cmb2_fields_menu()
     ],
   ]);
 
-  $categoria = $cmb->add_field([
-    'name' => 'Categoria',
-    'id' => 'categoria',
-    'type' => 'group',
-    'repeatable' => true,
-    'options' => [
-      'group_title' => 'Categoria {#}',
-      'add_button' => 'Adicionar Categoria',
-      'remove_button' => 'Remover Categoria',
-      'sortable' => true,
-    ],
-  ]);
-
-
   $pratos = $cmb->add_field([
     'name' => 'Pratos',
     'id' => 'pratos',
@@ -71,3 +57,7 @@ function cmb2_fields_menu()
     'type' => 'text',
   ]);
 }
+
+
+// Habilitar Menu
+add_theme_support('menus');
